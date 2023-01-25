@@ -18,10 +18,14 @@ public:
     ~Najdorf();
 
 private slots:
-    void updateLineNumberAreaWidth(int newBlockCount);
-    void updateLineNumberArea(const QRect &rect, int dy);
-    int lineNumberAreaWidth();
-    LineNumberArea* lineNumberArea;
+    //void updateLineNumberAreaWidth(int newBlockCount);
+    //void updateLineNumberArea(const QRect &rect, int dy);
+    //int lineNumberAreaWidth();
+    //LineNumberArea* lineNumberArea;
+
+    void on_actionFile_Explorer_toggled(bool arg1);
+
+    void on_dockWidget_visibilityChanged(bool visible);
 
 private:
     Ui::Najdorf *ui;
