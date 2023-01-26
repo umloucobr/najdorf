@@ -7,13 +7,19 @@
     <x>0</x>
     <y>0</y>
     <width>800</width>
-    <height>600</height>
+    <height>616</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Najdorf</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">QMainWindow::separator{ width: 0.5px; height: 0.5px; }</string>
+  </property>
   <widget class="QWidget" name="centralwidget">
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
    <widget class="QPlainTextEdit" name="plainTextEdit">
     <property name="enabled">
      <bool>true</bool>
@@ -34,7 +40,7 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>22</height>
+     <height>21</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
@@ -90,18 +96,25 @@
     <bool>true</bool>
    </property>
    <property name="autoFillBackground">
-    <bool>true</bool>
+    <bool>false</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
    </property>
    <property name="floating">
     <bool>false</bool>
    </property>
    <property name="allowedAreas">
-    <set>Qt::LeftDockWidgetArea|Qt::RightDockWidgetArea</set>
+    <set>Qt::AllDockWidgetAreas</set>
    </property>
    <attribute name="dockWidgetArea">
     <number>1</number>
    </attribute>
-   <widget class="QWidget" name="dockWidgetContents"/>
+   <widget class="QWidget" name="dockWidgetContents">
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+   </widget>
   </widget>
   <action name="actionNew_Project">
    <property name="text">
@@ -174,6 +187,7 @@
     <string>File Explorer</string>
    </property>
   </action>
+  <zorder>dockWidget</zorder>
  </widget>
  <resources/>
  <connections/>

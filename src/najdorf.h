@@ -2,7 +2,6 @@
 #define NAJDORF_H
 
 #include <QMainWindow>
-#include <linecounter.h>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class Najdorf; }

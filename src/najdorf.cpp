@@ -32,4 +32,3 @@ void Najdorf::on_dockWidget_visibilityChanged(bool visible)
         Najdorf::on_actionFile_Explorer_toggled(false);
     }
 }
-
