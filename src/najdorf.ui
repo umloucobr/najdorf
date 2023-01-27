@@ -32,6 +32,15 @@
       <height>569</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <family>Cascadia Mono</family>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 0;</string>
+    </property>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">

@@ -19,7 +19,6 @@ set(PROJECT_SOURCES
         najdorf.cpp
         najdorf.h
         najdorf.ui
-        linecounter.h
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
