@@ -4,7 +4,7 @@
 #include <QMainWindow>
 
 QT_BEGIN_NAMESPACE
-namespace Ui { class Najdorf; }
+namespace Ui {class Najdorf;}
 QT_END_NAMESPACE
 
 //Main text editor screen.
@@ -17,15 +17,13 @@ public:
     ~Najdorf();
 
 private slots:
-    //void updateLineNumberAreaWidth(int newBlockCount);
-    //void updateLineNumberArea(const QRect &rect, int dy);
-    //int lineNumberAreaWidth();
-    //LineNumberArea* lineNumberArea;
+    void on_actionExplorer_toggled(bool arg1);
 
-    void on_actionFile_Explorer_toggled(bool arg1);
+    void on_actionOutput_toggled(bool arg1);
 
-    void on_dockWidget_visibilityChanged(bool visible);
+    void on_output_visibilityChanged(bool visible);
 
+    void on_explorer_visibilityChanged(bool visible);
 private:
     Ui::Najdorf *ui;
 };

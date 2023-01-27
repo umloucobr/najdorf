@@ -14,7 +14,13 @@
    <string>Najdorf</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">QMainWindow::separator{ width: 0.5px; height: 0.5px; }</string>
+   <string notr="true"/>
+  </property>
+  <property name="windowFilePath">
+   <string>MainWindow::separator{ width: 0.5px; height: 0.5px; }</string>
+  </property>
+  <property name="dockNestingEnabled">
+   <bool>true</bool>
   </property>
   <widget class="QWidget" name="centralwidget">
    <property name="autoFillBackground">
@@ -35,7 +41,7 @@
     <property name="font">
      <font>
       <family>Cascadia Mono</family>
-      <pointsize>9</pointsize>
+      <kerning>true</kerning>
      </font>
     </property>
     <property name="styleSheet">
@@ -81,9 +87,10 @@
     </property>
     <widget class="QMenu" name="menuSide_Widgets">
      <property name="title">
-      <string>Side Widgets</string>
+      <string>Widgets</string>
      </property>
-     <addaction name="actionFile_Explorer"/>
+     <addaction name="actionExplorer"/>
+     <addaction name="actionOutput"/>
     </widget>
     <addaction name="menuSide_Widgets"/>
    </widget>
@@ -100,9 +107,21 @@
    <addaction name="menuAbout"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
-  <widget class="QDockWidget" name="dockWidget">
+  <widget class="QDockWidget" name="explorer">
    <property name="enabled">
     <bool>true</bool>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>200</width>
+     <height>73</height>
+    </size>
    </property>
    <property name="autoFillBackground">
     <bool>false</bool>
@@ -117,13 +136,31 @@
     <set>Qt::AllDockWidgetAreas</set>
    </property>
    <attribute name="dockWidgetArea">
-    <number>1</number>
+    <number>2</number>
    </attribute>
-   <widget class="QWidget" name="dockWidgetContents">
+   <widget class="QWidget" name="explorerContents">
+    <property name="minimumSize">
+     <size>
+      <width>58</width>
+      <height>54</height>
+     </size>
+    </property>
     <property name="styleSheet">
      <string notr="true"/>
     </property>
    </widget>
+  </widget>
+  <widget class="QDockWidget" name="output">
+   <property name="minimumSize">
+    <size>
+     <width>200</width>
+     <height>200</height>
+    </size>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>8</number>
+   </attribute>
+   <widget class="QWidget" name="outputContents"/>
   </widget>
   <action name="actionNew_Project">
    <property name="text">
@@ -185,7 +222,7 @@
     <string>Version</string>
    </property>
   </action>
-  <action name="actionFile_Explorer">
+  <action name="actionExplorer">
    <property name="checkable">
     <bool>true</bool>
    </property>
@@ -193,10 +230,22 @@
     <bool>true</bool>
    </property>
    <property name="text">
-    <string>File Explorer</string>
+    <string>Explorer</string>
    </property>
   </action>
-  <zorder>dockWidget</zorder>
+  <action name="actionOutput">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Output</string>
+   </property>
+  </action>
+  <zorder>output</zorder>
+  <zorder>explorer</zorder>
  </widget>
  <resources/>
  <connections/>

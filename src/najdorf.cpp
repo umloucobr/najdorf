@@ -7,6 +7,7 @@ Najdorf::Najdorf(QWidget *parent)
 {
     ui->setupUi(this);
     setCentralWidget(ui->plainTextEdit);
+    ui->plainTextEdit->setLineWrapMode(QPlainTextEdit::NoWrap);
 }
 
 Najdorf::~Najdorf()
@@ -14,21 +15,38 @@ Najdorf::~Najdorf()
     delete ui;
 }
 
-void Najdorf::on_actionFile_Explorer_toggled(bool arg1)
+void Najdorf::on_actionExplorer_toggled(bool arg1)
 {
     if (arg1) {
-        ui->dockWidget->show();
+        ui->explorer->show();
     }
     else {
-        ui->dockWidget->hide();
-        ui->actionFile_Explorer->setChecked(false);
+        ui->explorer->hide();
+        ui->actionExplorer->setChecked(false);
     }
 }
 
+void Najdorf::on_actionOutput_toggled(bool arg1)
+{
+    if (arg1) {
+        ui->output->show();
+    }
+    else {
+        ui->output->hide();
+        ui->actionOutput->setChecked(false);
+    }
+}
 
-void Najdorf::on_dockWidget_visibilityChanged(bool visible)
+void Najdorf::on_explorer_visibilityChanged(bool visible)
 {
     if (!visible) {
-        Najdorf::on_actionFile_Explorer_toggled(false);
+        Najdorf::on_actionExplorer_toggled(false);
+    }
+}
+
+void Najdorf::on_output_visibilityChanged(bool visible)
+{
+    if (!visible) {
+        Najdorf::on_actionOutput_toggled(false);
     }
 }
