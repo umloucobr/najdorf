@@ -25,6 +25,7 @@ private slots:
 
     void on_explorer_visibilityChanged(bool visible);
 private:
+    void applyStyleSheet(bool isDarkMode);
     Ui::Najdorf *ui;
 };
 

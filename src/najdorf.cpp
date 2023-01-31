@@ -7,13 +7,33 @@ Najdorf::Najdorf(QWidget *parent)
 {
     ui->setupUi(this);
     setCentralWidget(ui->plainTextEdit);
-    ui->plainTextEdit->setLineWrapMode(QPlainTextEdit::NoWrap);
+    setCorner(Qt::BottomRightCorner, Qt::RightDockWidgetArea);
+    applyStyleSheet(true);
 }
 
 Najdorf::~Najdorf()
 {
     delete ui;
 }
+
+void Najdorf::applyStyleSheet(bool isDarkMode) {
+    if (isDarkMode){
+        setStyleSheet("QMainWindow{background-color: #1F1F1F}"
+                      "QMenuBar::item:selected{background-color: #383838;}");
+        ui->menubar->setStyleSheet("background-color: #1F1F1F;"
+                                   "color: #D6D6D6;"
+                                   "selection-background-color: #383838;");
+        ui->plainTextEdit->setStyleSheet("background-color: #1F1F1F;"
+                                         "color: #C8C8C8;"
+                                         "border:1px solid #3D3D3D;");
+        ui->explorer->setStyleSheet("background-color: #1F1F1F;"
+                                    "color: #B2B2B2;"
+                                    "border: 1px solid #3D3D3D;");
+        ui->output->setStyleSheet("background-color: #1F1F1F;"
+                                  "color: #B2B2B2;"
+                                  "border: 1px solid #3D3D3D");
+    }
+};
 
 void Najdorf::on_actionExplorer_toggled(bool arg1)
 {

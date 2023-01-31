@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>800</width>
-    <height>616</height>
+    <height>604</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,14 +17,26 @@
    <string notr="true"/>
   </property>
   <property name="windowFilePath">
-   <string>MainWindow::separator{ width: 0.5px; height: 0.5px; }</string>
+   <string/>
+  </property>
+  <property name="documentMode">
+   <bool>false</bool>
+  </property>
+  <property name="tabShape">
+   <enum>QTabWidget::Rounded</enum>
   </property>
   <property name="dockNestingEnabled">
    <bool>true</bool>
   </property>
+  <property name="unifiedTitleAndToolBarOnMac">
+   <bool>false</bool>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <property name="autoFillBackground">
     <bool>false</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
    </property>
    <widget class="QPlainTextEdit" name="plainTextEdit">
     <property name="enabled">
@@ -45,11 +57,17 @@
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">border: 0;</string>
+     <string notr="true"/>
+    </property>
+    <property name="lineWrapMode">
+     <enum>QPlainTextEdit::NoWrap</enum>
     </property>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
    <property name="geometry">
     <rect>
      <x>0</x>
@@ -57,6 +75,12 @@
      <width>800</width>
      <height>21</height>
     </rect>
+   </property>
+   <property name="defaultUp">
+    <bool>false</bool>
+   </property>
+   <property name="nativeMenuBar">
+    <bool>true</bool>
    </property>
    <widget class="QMenu" name="menuFile">
     <property name="title">
@@ -85,16 +109,19 @@
     <property name="title">
      <string>View</string>
     </property>
-    <widget class="QMenu" name="menuSide_Widgets">
+    <widget class="QMenu" name="menuWidgets">
      <property name="title">
       <string>Widgets</string>
      </property>
      <addaction name="actionExplorer"/>
      <addaction name="actionOutput"/>
     </widget>
-    <addaction name="menuSide_Widgets"/>
+    <addaction name="menuWidgets"/>
    </widget>
    <widget class="QMenu" name="menuAbout">
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
     <property name="title">
      <string>About</string>
     </property>
@@ -135,6 +162,9 @@
    <property name="allowedAreas">
     <set>Qt::AllDockWidgetAreas</set>
    </property>
+   <property name="windowTitle">
+    <string>Explorer</string>
+   </property>
    <attribute name="dockWidgetArea">
     <number>2</number>
    </attribute>
@@ -156,6 +186,18 @@
      <width>200</width>
      <height>200</height>
     </size>
+   </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <property name="features">
+    <set>QDockWidget::DockWidgetClosable|QDockWidget::DockWidgetFloatable|QDockWidget::DockWidgetMovable</set>
+   </property>
+   <property name="allowedAreas">
+    <set>Qt::AllDockWidgetAreas</set>
+   </property>
+   <property name="windowTitle">
+    <string>Output</string>
    </property>
    <attribute name="dockWidgetArea">
     <number>8</number>
